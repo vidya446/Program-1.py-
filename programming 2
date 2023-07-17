@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+void generateSeries(int a) {
+    int num = 1;
+    while (a > 0) {
+        printf("%d ", num);
+        num += 2;
+        a--;
+    }
+
+    printf("\n");
+}
+
+int main() {
+    int a;
+
+    printf("Enter the value of 'a': ");
+    scanf("%d", &a);
+
+    generateSeries(a);
+
+    return 0;
+}

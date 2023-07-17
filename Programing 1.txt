@@ -1,0 +1,65 @@
+Programing 1:
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+typedef struct {
+    double a;
+    double b;
+    char operation[20];
+} Calculator;
+
+
+double add(double a, double b) {
+    return a + b;
+}
+double subtract(double a, double b) {
+    return a - b;
+}
+
+
+double multiply(double a, double b) {
+    return a * b;
+}
+double divide(double a, double b) {
+    if (b != 0)
+        return a / b;
+    else {
+        printf("Error: Division by zero is not allowed.\n");
+        return 0;
+    }
+}
+
+int main() {
+    Calculator calc;
+    double result;
+
+    printf("Enter the value of 'a': ");
+    scanf("%lf", &calc.a);
+
+    printf("Enter the value of 'b': ");
+    scanf("%lf", &calc.b);
+
+    printf("Enter the type of operation (add, subtract, multiply, divide): ");
+    scanf("%s", calc.operation);
+
+  
+    if (strcmp(calc.operation, "add") == 0) {
+        result = add(calc.a, calc.b);
+    } else if (strcmp(calc.operation, "subtract") == 0) {
+        result = subtract(calc.a, calc.b);
+    } else if (strcmp(calc.operation, "multiply") == 0) {
+        result = multiply(calc.a, calc.b);
+    } else if (strcmp(calc.operation, "divide") == 0) {
+        result = divide(calc.a, calc.b);
+    } else {
+        printf("Error: Invalid operation.\n");
+        return 1;
+    }
+
+    printf("Result: %.2f\n", result);
+
+    return 0;
+}
